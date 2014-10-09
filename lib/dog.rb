@@ -1,5 +1,5 @@
 class Dog
-	attr_accessor :leash, :plastic_bag, :walking, :vet_checkup
+	attr_accessor :leash, :plastic_bag, :walking, :vet
 
 	def initialize(name, breed, owner_name)
 		@name = name
@@ -7,7 +7,7 @@ class Dog
 		@leash = false
 		@plastic_bag = false
 		@walking = false
-		@vet_checkup = false
+		@vet = false
 		@owner = Owner.new(owner_name, self)
 	end
 
@@ -27,12 +27,14 @@ class Dog
 		@owner
 	end
 
+	# Methods that are no longer needed, and have been abstracted out to owner class.
+
 	def walking?(owner)
 		owner.dog.walking
 	end
 
 	def vet_checkup?(owner)
-		owner.dog.vet_checkup
+		owner.dog.vet
 	end
 
 	def walk(owner)
@@ -44,16 +46,6 @@ class Dog
 	def vet_checkup(owner)
 		owner.dog.leash = true
 		owner.dog.plastic_bag = true
-		owner.dog.vet_checkup = true
-	end
-
-	def return_home(owner)
-		owner.dog.leash = false
-		owner.dog.plastic_bag = false
-		if owner.dog.walking
-			owner.dog.walking = false
-		else
-			owner.dog.vet_checkup = false
-		end
+		owner.dog.vet = true
 	end
 end
