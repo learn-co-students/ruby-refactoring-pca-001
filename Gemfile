@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem 'pry', '~> 0.10.1'
-gem 'rspec', '~> 3.1.0'
+gem 'pry'
+gem 'rspec'
