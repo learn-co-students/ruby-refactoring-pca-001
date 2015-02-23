@@ -62,4 +62,4 @@ The logic has now been refactored into their appropriate methods.
 This simply means that in order to avoid repetition, we need to further abstract out logic. If you have a few methods that accomplish something similar, consolidate the repetitive logic. Instead of repeating the same bit of code to meet your needs, have a method that accepts arguments and passes those arguments into the logic in order to account for variability. This helps tremendously if you need to make changes to that logic. Instead of having to make that change in many different methods, you only need to change it in one place.
 
 ## Resources
-- [Extracting a Method into a Class](http://www.integralist.co.uk/posts/refactoring-techniques/#replace-method-with-method-object)
+- [Extracting a Method into a Class](http://www.integralist.co.uk/posts/refactoring-techniques.html#16)
