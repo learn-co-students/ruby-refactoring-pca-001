@@ -27,13 +27,6 @@ class Dog
     @owner
   end
 
-  def walking?(owner)
-    owner.dog.walking
-  end
-
-  def vet_checkup?(owner)
-    owner.dog.vet_checkup
-  end
 
   # Refactor the following methods as methods in the Owner class!
 
