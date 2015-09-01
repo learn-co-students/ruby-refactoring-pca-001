@@ -1,27 +1,22 @@
 class Owner
-	attr_accessor :name, :dog
+  attr_accessor :name, :dog 
 
-	def initialize(name, dog)
-		@name = name
-		@dog = dog
-	end
+  def initialize(name)
+    @name = name
+  end
 
-	def walk
-		prepare_items
-		dog.walking = true
-	end
+  def walk
+    prepare_items
+    self.dog.walking = true
+  end
 
-	def prepare_items
-		dog.leash = true
-		dog.plastic_bag = true
-	end
+  def vet_checkup 
+    prepare_items
+    self.dog.vet = true
+  end
 
-	def walking?
-		dog.walking
-	end
-
-	def vet_checkup
-		prepare_items
-		dog.vet = true
-	end
+  def prepare_items
+    self.dog.leash = true
+    self.dog.plastic_bag = true
+  end
 end

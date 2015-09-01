@@ -1,51 +1,46 @@
 class Dog
-	attr_accessor :leash, :plastic_bag, :walking, :vet
+  attr_accessor :leash, :plastic_bag, :walking, :vet
 
-	def initialize(name, breed, owner_name)
-		@name = name
-		@breed = breed
-		@leash = false
-		@plastic_bag = false
-		@walking = false
-		@vet = false
-		@owner = Owner.new(owner_name, self)
-	end
+  def initialize(name, breed, owner)
+    @name = name
+    @breed = breed
+    @owner = Owner.new(owner)
+    @owner.dog = self
+    @leash = false
+    @plastic_bag = false
+    @walking = false
+    @vet_checkup = false
+  end
 
-	def name
-		@name
-	end
+  def name
+    @name
+  end
 
-	def bark
-		"Woof!"
-	end
+  def bark
+    "Woof!"
+  end
 
-	def breed
-		@breed
-	end
+  def breed
+    @breed
+  end
 
-	def owner
-		@owner
-	end
+  def owner
+    @owner
+  end
 
-	# Methods that are no longer needed, and have been abstracted out to owner class.
+  # Refactor the following methods as methods in the Owner class!
 
-	def walking?(owner)
-		owner.dog.walking
-	end
+  # def walk(owner)
+  #   # REFACTOR!
+  #   owner.dog.leash = true
+  #   owner.dog.plastic_bag = true
+  #   owner.dog.walking = true
+  # end
 
-	def vet_checkup?(owner)
-		owner.dog.vet
-	end
-
-	def walk(owner)
-		owner.dog.leash = true
-		owner.dog.plastic_bag = true
-		owner.dog.walking = true
-	end
-
-	def vet_checkup(owner)
-		owner.dog.leash = true
-		owner.dog.plastic_bag = true
-		owner.dog.vet = true
-	end
+  # def vet_checkup(owner)
+  #   # REFACTOR!
+  #   owner.dog.leash = true
+  #   owner.dog.plastic_bag = true
+  #   owner.dog.vet_checkup = true
+  # end
 end
