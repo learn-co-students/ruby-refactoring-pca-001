@@ -12,7 +12,6 @@ class Owner
   end
 
   def vet_checkup 
-    
     prepare_items
     self.dog.vet = true
   end
