@@ -64,7 +64,7 @@ The move we discuss them and the more we practice implementing them, you'll star
 
 Here are a few things to look out for:
 
-* Methods that carry out for than one task
+* Methods that carry out for more than one task
 * Methods that rely on more than one or two helper methods
 * Methods that are very long
 * Methods that take in too many arguments
