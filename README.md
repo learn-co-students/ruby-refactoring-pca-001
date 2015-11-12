@@ -64,7 +64,7 @@ The move we discuss them and the more we practice implementing them, you'll star
 
 Here are a few things to look out for:
 
-* Methods that carry out for than one task
+* Methods that carry out for more than one task
 * Methods that rely on more than one or two helper methods
 * Methods that are very long
 * Methods that take in too many arguments
@@ -78,7 +78,7 @@ Follow along with the guidelines below to help you get the tests passing. We'll 
 Open up `lib/dog.rb` and checkout the `walk(owner)` and `vet_checkup(owner)`. Notice that these two methods have a dependency on an "owner" argument. Think about the desired behavior of these methods. Are going for a walk and being taken to the vet a *dog's* responsibility? Unless we're dealing with a very exceptional dog or a very negligent owner, I don't think so. This is a code smell. These two methods are carrying out actions that are *not* the responsibility of the class to which they belong. They are the responsibility of a dog's owner. So, let's make an `Owner` class and refactor the above-mentioned two methods into instance methods of the `Owner` class. 
 
 * First, define an `initialize` method for the `Owner` class. An `Owner` instance should instantiate with a name. Owner also needs an `attr_accessor` for name. 
-* Look at the initialize method of the `Dog` class. Looks like  `Dog` instances expect to initialize with a string that is the owner's name. We know, however, that dogs and owners need to associated with one another. When a dog get instantiated, therefore, it should take that owner's name and use it to: 
+* Look at the initialize method of the `Dog` class. Looks like  `Dog` instances expect to initialize with a string that is the owner's name. We know, however, that dogs and owners need to be associated with one another. When a dog get instantiated, therefore, it should take that owner's name and use it to: 
   * make a new instance of the  `Owner` class
   * Set that owner's `.dog=` property to the dog that is being instantiated. 
   * That means that `Owner` needs an `attr_accessor` for `dog`! 
