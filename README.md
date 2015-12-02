@@ -159,3 +159,5 @@ The logic has now been refactored into their appropriate methods.
 
 Run the test suite and make sure that all tests are passing! If you're not seeing all green, use the test output to help you debug. 
  
+
+<a href='https://learn.co/lessons/ruby-refactoring' data-visibility='hidden'>View this lesson on Learn.co</a>
